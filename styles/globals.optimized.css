@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Roboto+Condensed:wght@300;400;700&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-size: 16px;
+  --background: #000000;
+  --foreground: #e5e5e5;
+  --card: #0a0a0a;
+  --card-foreground: #e5e5e5;
+  --popover: #0a0a0a;
+  --popover-foreground: #e5e5e5;
+  --primary: #c0c0c0;
+  --primary-foreground: #000000;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #e5e5e5;
+  --muted: #1a1a1a;
+  --muted-foreground: #888888;
+  --accent: #a0a0a0;
+  --accent-foreground: #000000;
+  --destructive: #b91c1c;
+  --destructive-foreground: #ffffff;
+  --border: rgba(192, 192, 192, 0.12);
+  --input: rgba(192, 192, 192, 0.08);
+  --input-background: #0a0a0a;
+  --switch-background: #1a1a1a;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #c0c0c0;
+  
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-subheading: 'Roboto Condensed', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Base styles */
+* {
+  border-color: var(--border);
+  outline-color: var(--ring);
+  outline-width: 1px;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.7)), url('/a-dark-knight-5c.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Typography */
+h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: var(--font-subheading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: var(--font-subheading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(192, 192, 192, 0.1);
+  will-change: transform;
+}
+
+.glass-strong {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(192, 192, 192, 0.15);
+  will-change: transform;
+}
+
+/* Optimized transitions */
+.smooth-transition {
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  will-change: transform, opacity;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Image loading */
+.image-fade {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.image-fade.loaded {
+  opacity: 1;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}

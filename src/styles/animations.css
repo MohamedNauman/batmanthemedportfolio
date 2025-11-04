@@ -1,0 +1,240 @@
+/* Optimized fade in animation - smoother and more performant */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  /* Removed will-change and transform3d for better performance */
+}
+
+/* Slide-in animations from different directions */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide-out animations */
+@keyframes slideOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.95);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(50px) scale(0.95);
+  }
+}
+
+@keyframes slideOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.95);
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+}
+
+/* Optimized slide animation utility classes */
+.slide-in-left {
+  opacity: 0;
+  animation: slideInLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  /* Removed will-change and transform3d for better performance */
+}
+
+.slide-in-right {
+  opacity: 0;
+  animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  /* Removed will-change and transform3d for better performance */
+}
+
+.slide-in-up {
+  opacity: 0;
+  animation: slideInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  /* Removed will-change and transform3d for better performance */
+}
+
+.slide-in-down {
+  opacity: 0;
+  animation: slideInDown 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  /* Removed will-change and transform3d for better performance */
+}
+
+.slide-out-left {
+  animation: slideOutLeft 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.slide-out-right {
+  animation: slideOutRight 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.slide-out-up {
+  animation: slideOutUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.slide-out-down {
+  animation: slideOutDown 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Animation delay utility classes */
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+.animate-delay-600 { animation-delay: 0.6s; }
+.animate-delay-700 { animation-delay: 0.7s; }
+.animate-delay-800 { animation-delay: 0.8s; }
+.animate-delay-900 { animation-delay: 0.9s; }
+.animate-delay-1000 { animation-delay: 1s; }
+.animate-delay-1100 { animation-delay: 1.1s; }
+.animate-delay-1200 { animation-delay: 1.2s; }
+.animate-delay-1300 { animation-delay: 1.3s; }
+.animate-delay-1400 { animation-delay: 1.4s; }
+.animate-delay-1500 { animation-delay: 1.5s; }
+.animate-delay-1600 { animation-delay: 1.6s; }
+.animate-delay-1700 { animation-delay: 1.7s; }
+.animate-delay-1800 { animation-delay: 1.8s; }
+.animate-delay-1900 { animation-delay: 1.9s; }
+.animate-delay-2000 { animation-delay: 2s; }
+.animate-delay-2500 { animation-delay: 2.5s; }
+
+/* Enhanced animation controls - animations are ready to play */
+.fade-in,
+.slide-in-left,
+.slide-in-right,
+.slide-in-up,
+.slide-in-down {
+  animation-play-state: running !important;
+}
+
+/* Pause animations when section is not visible */
+section:not(.visible) .fade-in,
+section:not(.visible) .slide-in-left,
+section:not(.visible) .slide-in-right,
+section:not(.visible) .slide-in-up,
+section:not(.visible) .slide-in-down {
+  animation-play-state: paused !important;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Allow forced visibility when JS fallback sets a class */
+.force-visible .fade-in,
+.force-visible .slide-in-left,
+.force-visible .slide-in-right,
+.force-visible .slide-in-up,
+.force-visible .slide-in-down {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Pre-load optimization */
+section:not(.visible) {
+  visibility: visible !important;
+  opacity: 0;
+}
+
+/* Enhanced performance optimizations for all interactive elements */
+.glass-strong,
+.glass,
+.fade-in,
+button,
+a {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity, filter;
+}
+
+.glass-strong:hover,
+.glass:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: brightness(1.1) saturate(1.1);
+}
+
+/* Smooth button interactions */
+button:hover,
+a:hover {
+  transform: translateY(-1px) scale(1.01);
+  filter: brightness(1.05);
+}
+
+/* Optimized hover lift effect */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px) scale(1.02);
+}

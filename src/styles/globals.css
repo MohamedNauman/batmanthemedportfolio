@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Roboto+Condensed:wght@300;400;700&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+@import './animations.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #000000;
+  --foreground: #e5e5e5;
+  --card: #0a0a0a;
+  --card-foreground: #e5e5e5;
+  --popover: #0a0a0a;
+  --popover-foreground: #e5e5e5;
+  --primary: #c0c0c0;
+  --primary-foreground: #000000;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #e5e5e5;
+  --muted: #1a1a1a;
+  --muted-foreground: #888888;
+  --accent: #a0a0a0;
+  --accent-foreground: #000000;
+  --destructive: #b91c1c;
+  --destructive-foreground: #ffffff;
+  --border: rgba(192, 192, 192, 0.12);
+  --input: rgba(192, 192, 192, 0.08);
+  --input-background: #0a0a0a;
+  --switch-background: #1a1a1a;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #c0c0c0;
+  --chart-1: #c0c0c0;
+  --chart-2: #888888;
+  --chart-3: #666666;
+  --chart-4: #a0a0a0;
+  --chart-5: #b0b0b0;
+  --radius: 0rem;
+  --sidebar: #000000;
+  --sidebar-foreground: #e5e5e5;
+  --sidebar-primary: #c0c0c0;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #0a0a0a;
+  --sidebar-accent-foreground: #e5e5e5;
+  --sidebar-border: rgba(192, 192, 192, 0.12);
+  --sidebar-ring: #c0c0c0;
+  
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-subheading: 'Roboto Condensed', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: rgba(var(--ring), 0.5);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed navigation */
+}
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll; /* Ensure vertical scrolling is enabled */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Optimized smooth transitions for performance */
+  button, a, .interactive, .glass, .glass-strong {
+    transition-property: transform, opacity, color, background-color, border-color, box-shadow, filter;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition-duration: 0.2s;
+      animation-duration: 0.2s;
+    }
+  }
+
+  /* Optimized hover effects - reduced complexity */
+  button:hover, a:hover, .interactive:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Optimized glass morphism - simplified */
+  .glass:hover, .glass-strong:hover {
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    border-color: rgba(192, 192, 192, 0.15);
+  }
+
+  /* Smooth scrolling optimizations */
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+  }
+
+  /* Remove will-change to prevent GPU memory issues */
+  .fade-in, .slide-in-left, .slide-in-right, .slide-in-up {
+    /* Removed will-change: transform, opacity; */
+  }
+
+  /* Hide scrollbar while keeping scrolling functionality */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
+
+  /* Disabled scroll snapping for smoother scrolling */
+  .snap-y {
+    scroll-snap-type: none;
+    scroll-behavior: smooth;
+    overscroll-behavior-y: contain;
+  }
+
+  .snap-start {
+    scroll-snap-align: none; /* Disabled snapping */
+    scroll-margin-top: 80px;
+  }
+
+  /* Smooth momentum scrolling on touch devices - removed aggressive snapping */
+  @media (hover: none) and (pointer: coarse) {
+    .snap-y {
+      scroll-snap-type: none; /* Disable snapping on touch for smoother experience */
+    }
+  }
+
+  /* Flawless scrolling optimizations */
+  html {
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    overscroll-behavior: none;
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* CPU-optimized smooth animations and transitions - simplified */
+  .glass,
+  .glass-strong {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Removed will-change to prevent GPU memory issues */
+  }
+
+  /* CPU-optimized smooth hover effects - simplified */
+  .glass:hover,
+  .glass-strong:hover {
+    transform: translateY(-1px);
+  }
+  
+  
+  
+  /* Cinematic letterbox bars - more subtle */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.9) 70%, transparent 100%);
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(0deg, #000 0%, rgba(0,0,0,0.9) 70%, transparent 100%);
+    pointer-events: none;
+    z-index: 9999;
+  }
+}
+
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      line-height: 1.2;
+      font-family: var(--font-heading);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      line-height: 1.2;
+      font-family: var(--font-heading);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      line-height: 1.3;
+      font-family: var(--font-subheading);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: 700;
+      line-height: 1.4;
+      font-family: var(--font-subheading);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: 300;
+      line-height: 1.6;
+      font-family: var(--font-body);
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: 400;
+      line-height: 1.5;
+      font-family: var(--font-body);
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: 700;
+      line-height: 1.5;
+      font-family: var(--font-subheading);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: 300;
+      line-height: 1.5;
+      font-family: var(--font-body);
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Film grain texture - more subtle */
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+.film-grain {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.25'/%3E%3C/svg%3E");
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 9998;
+  animation: grain 10s steps(8) infinite;
+}
+
+/* Scanline effect - more subtle */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(transparent, rgba(192, 192, 192, 0.08), transparent);
+  animation: scanline 12s linear infinite;
+  pointer-events: none;
+  z-index: 9997;
+}
+
+/* Enhanced glass morphism utility with smoother transitions */
+.glass {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  border: 1px solid rgba(192, 192, 192, 0.1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Removed will-change to prevent GPU memory issues */
+}
+
+.glass:hover {
+  background: rgba(10, 10, 10, 0.8);
+  border-color: rgba(192, 192, 192, 0.2);
+  transform: translateY(-1px);
+}
+
+.glass-strong {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(15px) saturate(150%);
+  -webkit-backdrop-filter: blur(15px) saturate(150%);
+  border: 1px solid rgba(192, 192, 192, 0.15);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Removed will-change to prevent GPU memory issues */
+}
+
+.glass-strong:hover {
+  background: rgba(10, 10, 10, 0.9);
+  border-color: rgba(192, 192, 192, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Glitch effect */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.glitch {
+  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+  animation-iteration-count: 1;
+}
+
